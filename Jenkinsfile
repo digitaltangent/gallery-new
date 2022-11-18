@@ -14,11 +14,11 @@ pipeline {
         sh 'npm install'
       }
     }
-    stage('Tests') {
-      steps { 
-        sh 'npm test'
-      }
-    }
+   // stage('Tests') {
+   //   steps { 
+  //      sh 'npm test'
+  //    }
+ //   }
 stage('Deploy to Heroku') {
   steps {
     withCredentials([usernameColonPassword(credentialsId: 'heroku', variable: 'HEROKU_CREDENTIALS' )]){
@@ -26,7 +26,12 @@ stage('Deploy to Heroku') {
       slackSend(channel: "#aleedaip1", message: "Testing Slack from Jenkins!")
     }
   }
-}     
+}
+stage('Start node') {
+  steps {
+   sh 'node server'
+  }
+}      
     
   
   }
