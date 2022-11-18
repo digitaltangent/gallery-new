@@ -6,6 +6,7 @@ pipeline {
     stage('clone the repo') {
       steps { 
         git 'https://github.com/digitaltangent/gallery-new.git'
+        slackSend(channel: "#aleedaip1", message: "git clone success!")
       }
     }
     stage('Install dependencies') {
