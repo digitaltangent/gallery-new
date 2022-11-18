@@ -22,7 +22,7 @@ pipeline {
 stage('Deploy to Heroku') {
   steps {
     withCredentials([usernameColonPassword(credentialsId: 'heroku', variable: 'HEROKU_CREDENTIALS' )]){
-      sh 'git push https://${HEROKU_CREDENTIALS}@https://git.heroku.com/immense-thicket-43199.git master'
+      sh 'git push https://${HEROKU_CREDENTIALS}@git.heroku.com/immense-thicket-43199.git master'
       slackSend(channel: "#aleedaip1", message: "Testing Slack from Jenkins!")
     }
   }
