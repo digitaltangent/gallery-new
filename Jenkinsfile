@@ -14,9 +14,9 @@ pipeline {
         sh 'npm install'
       }
     }
-    stage('Start MongoDB') {
+    stage('Start App') {
       steps {
-        sh 'mongod'
+        sh 'npm start'
       }
     }
     stage('Tests') {
