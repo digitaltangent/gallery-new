@@ -27,11 +27,11 @@ stage('Deploy to Heroku') {
     }
   }
 }
-stage('Start node') {
-  steps {
-   sh 'node server'
-  }
-}      
+//stage('Start node') {
+  //steps {
+   //sh 'node server'
+  //}
+//}      
     
   
   }
